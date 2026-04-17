@@ -386,7 +386,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('partnersSlider');
     const btnNext = document.getElementById('nextPartner');
@@ -428,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "<h3>Mentions Légales</h3>",
             body: `
                 <div class="legal-scroll-area">
-                    <p><strong>1. Présentation du site :</strong> En vertu de la loi pour la confiance dans l'économie numérique, il est précisé l'identité des intervenants du site <b><em>i-solutions.ci</em></b> </p>
+                    <p><strong>1. Présentation du site :</strong> En vertu de la loi pour la confiance dans l'économie numérique, il est précisé l'identité des intervenants du site <b><em>i-solutions.ci-portail</em></b> </p>
                     <ul>
                         <li><strong>Propriétaire :</strong> SARL I-Solutions | Capital : 2 000 000 FCFA | NCC : 2245209V</li>
                         <li><strong>Siège social :</strong> Yopougon, Ananeraie, 21 BP 4069 Abidjan 21</li>
@@ -468,5 +467,54 @@ document.addEventListener('DOMContentLoaded', () => {
     closeLegal.addEventListener('click', () => {
         legalModal.classList.remove('active');
         document.body.style.overflow = 'auto';
+    });
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+    const openModalBtn = document.getElementById('openCookieDetail');
+    const cookieModal = document.getElementById('cookieModal');
+    const closeBtn = document.getElementById('closeCookieModal');
+
+    // 1. GESTION DE L'AFFICHAGE DU BANDEAU
+    if (!localStorage.getItem('isolutions_cookies')) {
+        setTimeout(() => {
+            banner.classList.add('active');
+        }, 3000); // Apparaît après le chargement du site
+    }
+
+    // 2. ACTIONS DES BOUTONS (STOCKAGE)
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('isolutions_cookies', 'accepted');
+        banner.classList.remove('active');
+    });
+
+    declineBtn.addEventListener('click', () => {
+        localStorage.setItem('isolutions_cookies', 'declined');
+        banner.classList.remove('active');
+    });
+
+    // 3. GESTION DE LA BOÎTE DE DIALOGUE
+    openModalBtn.addEventListener('click', () => {
+        cookieModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Empêche le scroll
+    });
+
+    closeBtn.addEventListener('click', () => {
+        cookieModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    // Fermer la modale si clic en dehors
+    window.addEventListener('click', (e) => {
+        if (e.target === cookieModal) {
+            cookieModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
     });
 });

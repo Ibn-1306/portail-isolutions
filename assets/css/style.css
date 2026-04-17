@@ -349,7 +349,7 @@ body.loading {
 
 .btn-isolution:hover .btn-fill { width: 500px; height: 500px; }
 
-/* --- LOGIQUE D'AFFICHAGE AU SCROLL (STABLE) --- */
+/* --- LOGIQUE D'AFFICHAGE AU SCROLL --- */
 .nav-down .topbar { transform: translateY(-100%); }
 .nav-down .main-header { transform: translateY(-150%); }
 
@@ -1197,4 +1197,69 @@ body.loading {
 @media (max-width: 600px) {
     .footer-top-grid { grid-template-columns: 1fr; text-align: center; }
     .bottom-flex { flex-direction: column; gap: 15px; text-align: center; }
+}
+
+
+
+/* --- CONFIGURATION DES COULEURS DU BANDEAU --- */
+:root {
+    --cookie-bg: #ffffff;
+    --cookie-text: #111111;
+    --cookie-link: #0066c0;
+    --btn-accept-bg: #2AA4A2;
+    --btn-accept-text: #ffffff;
+    --btn-refuse-border: #adb1b8;
+    --btn-refuse-bg-hover: #f7fafa;
+}
+
+.amazon-bar {
+    position: fixed; bottom: 0; left: 0; width: 100%;
+    background-color: var(--cookie-bg);
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -8px 30px rgba(0,0,0,0.1);
+    z-index: 10000; padding: 25px 0;
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.amazon-bar.active { transform: translateY(0); }
+
+.amazon-flex { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; }
+
+.amazon-text h3 { font-size: 1.1rem; font-weight: 800; color: var(--cookie-text); margin-bottom: 8px; text-transform: none; }
+.amazon-text p { font-size: 0.9rem; color: #333; line-height: 1.5; }
+.amazon-text a { color: var(--cookie-link); text-decoration: none; font-weight: 600; }
+.amazon-text a:hover { text-decoration: underline; }
+
+/* BOUTONS */
+.amazon-actions { display: flex; align-items: center; gap: 12px; margin-top: 5px; }
+
+.btn-amazon-accept {
+    background-color: var(--btn-accept-bg); color: var(--btn-accept-text);
+    border: 1px solid var(--btn-accept-bg); padding: 8px 30px;
+    border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: 0.2s;
+}
+.btn-amazon-accept:hover { opacity: 0.85; box-shadow: 0 4px 10px rgba(42, 164, 162, 0.2); }
+
+.btn-amazon-decline {
+    background-color: transparent; border: 1px solid var(--btn-refuse-border);
+    color: var(--cookie-text); padding: 8px 30px;
+    border-radius: 20px; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: 0.2s;
+}
+.btn-amazon-decline:hover { background-color: var(--btn-refuse-bg-hover); border-color: #888; }
+
+.btn-amazon-link { background: none; border: none; color: var(--cookie-link); font-size: 0.9rem; cursor: pointer; }
+
+/* STYLE MODALE POLITIQUE */
+.legal-modal { max-width: 700px; border-radius: 15px; }
+.legal-scroll-area { max-height: 70vh; overflow-y: auto; padding-right: 15px; text-align: left; }
+.legal-scroll-area h2 { color: var(--primary); margin-bottom: 10px; }
+.last-update { font-style: italic; color: #888; margin-bottom: 20px; font-size: 0.8rem; }
+.legal-scroll-area h3 { font-size: 1.2rem; margin: 20px 0 10px; color: #111; }
+.legal-scroll-area ul { margin-left: 20px; margin-bottom: 15px; }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .amazon-flex { flex-direction: column; gap: 20px; }
+    .amazon-actions { width: 100%; justify-content: flex-start; }
 }

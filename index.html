@@ -372,15 +372,15 @@
             <p>Merci de nous avoir contacté. À très bientôt !</p>
         </div>
 
-    <form action="https://formspree.io/f/xjgpdlke" method="POST" id="contactForm" class="modal-form" autocomplete="off">
+    <form action="https://formspree.io/f/mkokrjab" method="POST" id="contactForm" class="modal-form" autocomplete="off">
         <!-- 1. Champ de sécurité anti-robot (invisible pour l'humain) -->
         <input type="text" name="_gotcha" style="display:none">
 
         <input type="text" name="nom" placeholder="Nom complet" required>
         <input type="email" name="email" placeholder="Adresse Email" required>
     
-        <!-- 2. Validation stricte du téléphone (10 chiffres) -->
-        <input type="tel" name="telephone" placeholder="Téléphone" required pattern="[0-9]{10}" title="Veuillez entrer un numéro à 10 chiffres">
+        <!-- Champ téléphone sans restriction -->
+        <input type="tel" name="telephone" placeholder="Téléphone" required>
             
             <!-- "Vous êtes"-->
             <select name="type_client" required>
@@ -539,6 +539,57 @@
         <div id="legalModalTitle"></div>
         <div id="legalModalBody" class="legal-text-content">
             <!-- Le texte sera injecté ici par le JS -->
+        </div>
+    </div>
+</div>
+
+
+<!-- BANDEAU COOKIES -->
+<div id="cookie-banner" class="amazon-bar">
+    <div class="container amazon-flex">
+        <div class="amazon-text">
+            <h3>Cookies et choix de confidentialité</h3>
+            <p>
+                Nous utilisons des cookies pour améliorer votre expérience sur le portail <strong>I-SOLUTIONS</strong>, 
+                analyser le trafic et personnaliser nos contenus numériques.
+                <a href="javascript:void(0)" id="openCookieDetail">Consulter notre politique relative aux cookies.</a>
+            </p>
+        </div>
+        <div class="amazon-actions">
+            <button id="accept-cookies" class="btn-amazon-accept">Accepter</button>
+            <button id="decline-cookies" class="btn-amazon-decline">Refuser</button>
+            <button id="customize-cookies" class="btn-amazon-link">Personnaliser</button>
+        </div>
+    </div>
+</div>
+
+<!-- MODALE POLITIQUE DE COOKIES -->
+<div id="cookieModal" class="modal-overlay">
+    <div class="modal-container legal-modal">
+        <button class="modal-close" id="closeCookieModal">&times;</button>
+        <div class="legal-scroll-area">
+            <h2>POLITIQUE RELATIVE AUX COOKIES</h2>
+            <p class="last-update">Dernière mise à jour le 17 avril 2026.</p>
+            
+            <p>Nous utilisons les cookies et les outils similaires (collectivement désignés « cookies ») pour les finalités décrites ci-dessous.</p>
+
+            <h3>1. Cookies opérationnels</h3>
+            <p>Nous utilisons des cookies pour fournir nos services numériques, par exemple :</p>
+            <ul>
+                <li>Vous reconnaître lorsque vous vous connectez pour utiliser nos services.</li>
+                <li>Afficher des fonctionnalités, des produits et des services IT qui pourraient vous intéresser.</li>
+                <li>Prévenir les activités frauduleuses et améliorer la sécurité de vos données.</li>
+                <li>Assurer le suivi de vos préférences (langue, région).</li>
+            </ul>
+            <p>Nous utilisons également des cookies pour comprendre comment les clients utilisent nos services afin de pouvoir apporter des améliorations techniques et ergonomiques sur le portail.</p>
+
+            <h3>2. Cookies publicitaires</h3>
+            <p>Nous utilisons également des cookies pour présenter certains types de contenus informatifs ou publicitaires en lien avec nos services informatiques, l'imprimerie et nos produits digitaux, pertinents par rapport à vos centres d’intérêt.</p>
+
+            <h3>3. Informations supplémentaires</h3>
+            <p>Les cookies opérationnels demeureront sur votre navigateur pendant 13 mois suivant votre dernière consultation. Certains cookies mémorisant vos préférences peuvent demeurer jusqu'à 5 ans. Vous pouvez gérer ces cookies via les paramètres de votre navigateur à tout moment.</p>
+            
+            <p><strong>Note :</strong> Le refus des cookies opérationnels peut limiter l'accès à certaines fonctionnalités essentielles du portail I-SOLUTIONS.</p>
         </div>
     </div>
 </div>
