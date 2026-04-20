@@ -587,18 +587,19 @@ body.loading {
 }
 
 .btn-outline-white {
+    background: transparent;
     border: 2px solid var(--white);
     color: var(--white);
-    padding: 12px 35px;
+    padding: 12px 30px;
     text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 }
 
 .btn-outline-white:hover {
-    background: var(--white);
+    background: #fff;
     color: #2AA4A2;
 }
 
@@ -1189,16 +1190,80 @@ body.loading {
 
 .legal-text-content h2 { font-size: 1.4rem; color: var(--primary); margin-bottom: 15px; }
 
-/* --- RESPONSIVE FOOTER --- */
-@media (max-width: 1024px) {
-    .footer-top-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+
+/* --- RESPONSIVE DU FOOTER --- */
+@media (max-width: 992px) {
+    /* Sur tablette, on passe à 2 colonnes classiques pour l'équilibre */
+    .footer-top-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        padding: 0 30px 40px;
+    }
 }
 
-@media (max-width: 600px) {
-    .footer-top-grid { grid-template-columns: 1fr; text-align: center; }
-    .bottom-flex { flex-direction: column; gap: 15px; text-align: center; }
-}
+@media (max-width: 768px) {
+    /* Sur Mobile, on change complètement la structure */
+    .footer-top-grid {
+        grid-template-columns: 1fr; /* Une seule colonne verticale */
+        gap: 0; /* On gère l'espace via les bordures */
+    }
 
+    /* Le bloc Logo/Contact reste centré en haut */
+    .footer-brand-col {
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    /* --- CHAQUE BLOC DE LIENS DEVIENT UNE LIGNE --- */
+    .footer-links-col {
+        display: flex;
+        justify-content: space-between; /* Pousse le titre à gauche et l'item à droite */
+        align-items: flex-start;
+        padding: 20px 0;
+        border-bottom: 2px solid #e1e1e1; /* Ligne de séparation */
+    }
+
+    /* Le titre à GAUCHE */
+    .footer-links-col h4 {
+        flex: 0 0 35%; 
+        font-size: 1rem;
+        margin-bottom: 0;
+        text-align: left;
+        color: #1a1a1a;
+    }
+
+    /* Les liens à DROITE */
+    .footer-links-col ul {
+        flex: 1; /* Prend tout le reste de l'espace à droite */
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-links-col ul li {
+        margin-bottom: 0;
+    }
+
+    .footer-links-col ul li a {
+        font-size: 0.85rem;
+        display: block;
+    }
+
+    /* BARRE DU BAS */
+    .bottom-flex {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 1px 0;
+    }
+
+    .legal-links {
+        justify-content: center;
+        gap: 15px;
+    }
+}
 
 
 /* --- CONFIGURATION DES COULEURS DU BANDEAU --- */

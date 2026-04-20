@@ -105,6 +105,47 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+// --- GESTION DE LA MODALE DE CONTACT  ---
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('contactModal');
+    const closeBtn = document.getElementById('closeModal');
+    
+    // On sélectionne TOUS les boutons qui doivent ouvrir la modale
+    const triggers = [
+        document.getElementById('openContactModal'),
+        document.getElementById('openContactModal2')
+    ];
+
+    // On ajoute l'événement clic à chaque bouton détecté
+    triggers.forEach(btn => {
+        if(btn) {
+            btn.addEventListener('click', () => {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+    });
+
+    // Fermer la modale
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Libère le scroll
+        });
+    }
+
+    // Fermer si clic à l'extérieur de la boîte blanche
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+
+
 // Fonction pour l'animation de compteur
 const runCounters = () => {
     const counters = document.querySelectorAll('.stat-number');
