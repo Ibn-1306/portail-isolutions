@@ -1236,15 +1236,15 @@ body.loading {
 
 .btn-amazon-accept {
     background-color: var(--btn-accept-bg); color: var(--btn-accept-text);
-    border: 1px solid var(--btn-accept-bg); padding: 8px 30px;
-    border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: 0.2s;
+    border: 5px solid var(--btn-accept-bg); padding: 5px 30px;
+    border-radius: 4px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: 0.2s;
 }
 .btn-amazon-accept:hover { opacity: 0.85; box-shadow: 0 4px 10px rgba(42, 164, 162, 0.2); }
 
 .btn-amazon-decline {
     background-color: transparent; border: 1px solid var(--btn-refuse-border);
     color: var(--cookie-text); padding: 8px 30px;
-    border-radius: 20px; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: 0.2s;
+    border-radius: 0px; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: 0.2s;
 }
 .btn-amazon-decline:hover { background-color: var(--btn-refuse-bg-hover); border-color: #888; }
 
