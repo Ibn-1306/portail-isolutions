@@ -1190,78 +1190,78 @@ body.loading {
 
 .legal-text-content h2 { font-size: 1.4rem; color: var(--primary); margin-bottom: 15px; }
 
-
-/* --- RESPONSIVE DU FOOTER --- */
-@media (max-width: 992px) {
-    /* Sur tablette, on passe à 2 colonnes classiques pour l'équilibre */
+/* -- VERSION RESPONSIVE PROFESSIONNELLE AVEC CROIX CENTRALE -- */
+@media (max-width: 1024px) {
     .footer-top-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
-        padding: 0 30px 40px;
+        padding: 0 10px 10px;
     }
 }
 
 @media (max-width: 768px) {
-    /* Sur Mobile, on change complètement la structure */
     .footer-top-grid {
-        grid-template-columns: 1fr; /* Une seule colonne verticale */
-        gap: 0; /* On gère l'espace via les bordures */
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
+        gap: 0;
+        padding: -50px;
     }
 
-    /* Le bloc Logo/Contact reste centré en haut */
+    /* Le bloc Logo/Contact prend toute la largeur en haut */
     .footer-brand-col {
-        padding-bottom: 10px;
-        margin-bottom: 5px;
+        grid-column: span 2; 
+        text-align: center;
+        padding: 40px 20px;
         border-bottom: 1px solid #e1e1e1;
     }
 
-    /* --- CHAQUE BLOC DE LIENS DEVIENT UNE LIGNE --- */
     .footer-links-col {
-        display: flex;
-        justify-content: space-between; /* Pousse le titre à gauche et l'item à droite */
-        align-items: flex-start;
-        padding: 20px 0;
-        border-bottom: 2px solid #e1e1e1; /* Ligne de séparation */
-    }
-
-    /* Le titre à GAUCHE */
-    .footer-links-col h4 {
-        flex: 0 0 35%; 
-        font-size: 1rem;
-        margin-bottom: 0;
-        text-align: left;
-        color: #1a1a1a;
-    }
-
-    /* Les liens à DROITE */
-    .footer-links-col ul {
-        flex: 1; /* Prend tout le reste de l'espace à droite */
-        text-align: left;
+        padding: 30px 20px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: center; /* Centre le contenu dans chaque case */
+        text-align: center;
     }
 
-    .footer-links-col ul li {
-        margin-bottom: 0;
+    /* --- CRÉATION DU TRAIT VERTICAL AU MILIEU --- */
+    .footer-links-col:nth-child(2),
+    .footer-links-col:nth-child(4) {
+        border-right: 1px solid #e1e1e1;
+    }
+
+    /* --- CRÉATION DU TRAIT HORIZONTAL AU MILIEU --- */
+    .footer-links-col:nth-child(2),
+    .footer-links-col:nth-child(3) {
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    /* Ajustement des textes pour le mobile */
+    .footer-links-col h4 {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+        color: #1a1a1a;
+        width: 100%;
+    }
+
+    .footer-links-col ul {
+        width: 100%;
     }
 
     .footer-links-col ul li a {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         display: block;
+        padding: 2px 0;
     }
 
-    /* BARRE DU BAS */
+    /* BARRE INFÉRIEURE */
+    .footer-bottom-bar {
+        border-top: 1px solid #e1e1e1;
+        padding: 30px 0;
+    }
+    
     .bottom-flex {
         flex-direction: column;
         gap: 20px;
-        text-align: center;
-        padding: 1px 0;
-    }
-
-    .legal-links {
-        justify-content: center;
-        gap: 15px;
     }
 }
 
