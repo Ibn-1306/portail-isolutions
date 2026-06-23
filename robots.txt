@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://portail.i-solutions.ci/sitemap.xml
