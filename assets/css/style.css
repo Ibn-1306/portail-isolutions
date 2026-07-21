@@ -702,7 +702,7 @@ body.loading {
     color: #444;
 }
 
-/* --- RESPONSIVE (SECTION ABOUT) --- */
+/* --- RESPONSIVE --- */
 
 @media (max-width: 992px) {
     .about-wrapper {
@@ -712,77 +712,80 @@ body.loading {
 
     .about-left, .about-right {
         min-width: 100%;
-        padding: 50px 30px;
-        text-align: center;
+        padding: 60px 20px;
+        text-align: center; /* Centre tout le texte des deux blocs */
     }
 
+    /* --- I-SOLUTIONS SUR UNE SEULE LIGNE --- */
     .about-brand {
-        font-size: clamp(1.8rem, 10vw, 3.5rem); 
-        white-space: nowrap;
+        font-size: clamp(1.8rem, 8vw, 3.5rem); /* Typographie fluide */
+        white-space: nowrap; /* Interdit le retour à la ligne */
         display: block;
         width: 100%;
         margin-bottom: 25px;
     }
 
     .about-divider {
-        margin: 20px auto; /* Centre la ligne de séparation */
+        margin: 20px auto; /* Centre la ligne sous le titre */
     }
 
     .about-divider span {
         left: 50%;
-        transform: translateX(-50%); /* Centre le petit trait orange */
+        transform: translateX(-50%);
     }
 
-    /* Ajustement des statistiques */
+    /* --- CENTRAGE DES STATISTIQUES --- */
     .stats-top-row {
-        grid-template-columns: repeat(3, 1fr); /* Garde 3 colonnes sur tablette */
-        gap: 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Garde 3 colonnes pour l'équilibre */
+        gap: 10px;
+        width: 100%;
+    }
+
+    .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centre verticalement le contenu de chaque stat */
+        justify-content: center;
     }
 
     .stat-circle {
-        width: 80px;
-        height: 80px;
+        margin: 0 auto 15px !important; /* Force le centrage horizontal du cercle */
+        width: 85px;
+        height: 85px;
     }
 
     .stat-num {
-        font-size: 1.5rem;
-    }
-
-    /* Section Expérience en bas */
-    .exp-large {
-        justify-content: center;
-        padding-top: 20px;
-    }
-
-    .stat-num-large {
-        font-size: 3rem;
-    }
-
-    .exp-text {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .about-left, .about-right {
-        padding: 40px 15px;
-    }
-
-    .stats-top-row {
-        grid-template-columns: 1fr; /* Une seule colonne sur petit mobile pour la clarté */
-        gap: 30px;
-    }
-
-    .about-tagline {
-        font-size: 1rem;
-    }
-
-    .exp-text {
         font-size: 1.4rem;
     }
 
-    .stat-num-large {
-        font-size: 2.5rem;
+    .stat-item p {
+        font-size: 0.75rem;
+    }
+
+    /* --- SECTION EXPÉRIENCE --- */
+    .exp-large {
+        justify-content: center; /* Centre les "Ans d'Expériences" */
+        margin-top: 30px;
+    }
+
+    .stat-num-large { font-size: 3rem; }
+    .exp-text { font-size: 1.8rem; }
+}
+
+/* Optimisation pour les très petits téléphones */
+@media (max-width: 480px) {
+    .stats-top-row {
+        grid-template-columns: 1fr; /* On empile sur 1 colonne pour la lisibilité */
+        gap: 30px;
+    }
+
+    .about-brand {
+        font-size: 1.6rem; /* Réduction pour les écrans < 400px */
+    }
+
+    .exp-text {
+        font-size: 1.2rem;
     }
 }
 
