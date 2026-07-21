@@ -702,12 +702,88 @@ body.loading {
     color: #444;
 }
 
-/* RESPONSIVE */
+/* --- RESPONSIVE (SECTION ABOUT) --- */
+
 @media (max-width: 992px) {
-    .about-wrapper { flex-direction: column; }
-    .about-left, .about-right { min-width: 100%; padding: 40px 20px; }
-    .exp-text { font-size: 1.5rem; }
-    .stat-num-large { font-size: 3rem; }
+    .about-wrapper {
+        flex-direction: column;
+        border-radius: 20px;
+    }
+
+    .about-left, .about-right {
+        min-width: 100%;
+        padding: 50px 30px;
+        text-align: center;
+    }
+
+    .about-brand {
+        font-size: clamp(1.8rem, 10vw, 3.5rem); 
+        white-space: nowrap;
+        display: block;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .about-divider {
+        margin: 20px auto; /* Centre la ligne de séparation */
+    }
+
+    .about-divider span {
+        left: 50%;
+        transform: translateX(-50%); /* Centre le petit trait orange */
+    }
+
+    /* Ajustement des statistiques */
+    .stats-top-row {
+        grid-template-columns: repeat(3, 1fr); /* Garde 3 colonnes sur tablette */
+        gap: 15px;
+    }
+
+    .stat-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .stat-num {
+        font-size: 1.5rem;
+    }
+
+    /* Section Expérience en bas */
+    .exp-large {
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    .stat-num-large {
+        font-size: 3rem;
+    }
+
+    .exp-text {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-left, .about-right {
+        padding: 40px 15px;
+    }
+
+    .stats-top-row {
+        grid-template-columns: 1fr; /* Une seule colonne sur petit mobile pour la clarté */
+        gap: 30px;
+    }
+
+    .about-tagline {
+        font-size: 1rem;
+    }
+
+    .exp-text {
+        font-size: 1.4rem;
+    }
+
+    .stat-num-large {
+        font-size: 2.5rem;
+    }
 }
 
 
